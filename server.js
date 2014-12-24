@@ -8,6 +8,10 @@ app.get('/', function(req, res) {
 	res.setHeader('Content-Type', 'text/html');
 	res.render('index.ejs');
 })
+.get('/contact', function(req, res) {
+	res.setHeader('Content-Type', 'text/html');
+	res.render('contact.ejs');
+})
 .get('/ping', function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	res.send('{"alive" : true}');
