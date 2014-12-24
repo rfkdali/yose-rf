@@ -1,0 +1,24 @@
+{
+  "name": "nodejstrain",
+  "version": "0.1.0",
+  "description": "Yose The game with nodejs and express",
+  "main": "server.js",
+  "repository": {
+  "type": "git",
+  "url": "git@github.com:rfkdali/yose-rf.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "author": "rfkdali <rfkdali@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.10.6",
+    "ejs": "~0.8.3"
+  }
+}
