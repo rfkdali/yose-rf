@@ -31,7 +31,8 @@ function tableauPower(){
 		res.end(JSON.stringify({ "number" : number, "decomposition" : tab  }));
 	}
 	else{
-		res.send("not a power of 2")
+		res.setHeader('Content-Type', 'application/json');
+		res.end(JSON.stringify({ "number" : number, "error" : "not a number"  }));
 	}
 }
 tableauPower();
