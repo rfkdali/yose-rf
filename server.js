@@ -18,6 +18,7 @@ app.get('/', function(req, res) {
 function tableauPower(){
 	//on declare number comme la valeur du parametre number de l'url
 	var number = req.param("number");
+
 	var init = 1;
 	tab = new Array;
 	if(number % 2 == 0){
@@ -26,18 +27,22 @@ function tableauPower(){
 			tab[i] = 2;
 		}
 	}
+
+	res.setHeader('Content-Type', 'application/json');
+
 	if(init == number){
-		res.setHeader('Content-Type', 'application/json');
 		res.end(JSON.stringify({ "number" : number, "decomposition" : tab  }));
 	}
-	else{
-		res.setHeader('Content-Type', 'application/json');
+	// cas d'erreur
+	if(isNaN(parseInt(number))) {
 		res.end(JSON.stringify({ "number" : number, "error" : "not a number"  }));
+	}
+	else{
+		res.end(JSON.stringify({ "number" : number, "error" : "not a power of 2"  }));
 	}
 }
 tableauPower();
 });
-
 
 var server = app.listen(process.env.PORT || 3000, function () {
 	var host = server.address().address
